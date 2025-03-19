@@ -14,7 +14,7 @@ const getCompaniesRegisteredLastMonth = () => {
 const registerCompany = (taxId, companyName) => {
     const registrationDate = dayjs().format('YYYY-MM-DD');
     return new Promise((resolve, reject) => {
-        db.run(`INSERT INTO companies (tax_id, company_name, registration_date) VALUES (?, ?, ?)`, 
+        db.run(`INSERT INTO companies (cuit, company_name, registration_date) VALUES (?, ?, ?)`, 
         [taxId, companyName, registrationDate], function(err) {
             if (err) reject(err);
             resolve({ id: this.lastID, taxId, companyName, registrationDate });

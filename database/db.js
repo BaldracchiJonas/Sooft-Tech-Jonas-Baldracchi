@@ -5,7 +5,7 @@ db.serialize(() => {
     db.run(`
         CREATE TABLE IF NOT EXISTS companies (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            tax_id TEXT UNIQUE NOT NULL,
+            cuit TEXT UNIQUE NOT NULL,
             company_name TEXT NOT NULL,
             registration_date TEXT NOT NULL
         )

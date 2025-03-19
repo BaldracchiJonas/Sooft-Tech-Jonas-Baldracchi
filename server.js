@@ -37,14 +37,14 @@ const server = http.createServer(async (req, res) => {
 
         req.on('end', async () => {
             try {
-                const { tax_id, company_name } = JSON.parse(body);
-                if (!tax_id || !company_name) {
+                const { cuit, company_name } = JSON.parse(body);
+                if (!cuit || !company_name) {
                     res.writeHead(400, { 'Content-Type': 'application/json' });
                     res.end(JSON.stringify({ error: 'Missing required fields' }));
                     return;
                 }
 
-                const newCompany = await registerCompany(tax_id, company_name);
+                const newCompany = await registerCompany(cuit, company_name);
                 res.writeHead(201, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify(newCompany));
             } catch (error) {

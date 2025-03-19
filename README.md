@@ -42,7 +42,7 @@ http://localhost:3000
 [
   {
     "id": 1,
-    "tax_id": "30-70789899-0",
+    "cuit": "30-70789899-0",
     "company_name": "MercadoLibre",
     "registration_date": "2025-02-10"
   }
@@ -56,7 +56,7 @@ http://localhost:3000
 [
   {
     "id": 2,
-    "tax_id": "30-65987412-4",
+    "cuit": "30-65987412-4",
     "company_name": "Globant",
     "registration_date": "2025-02-15"
   }
@@ -68,7 +68,7 @@ http://localhost:3000
 - **Request Body:**
 ```json
 {
-  "tax_id": "30-12345678-9",
+  "cuit": "30-12345678-9",
   "company_name": "NewTech Solutions"
 }
 ```
